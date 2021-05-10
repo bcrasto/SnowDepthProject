@@ -32,7 +32,7 @@ test <- data.frame()
 
 
 i=2
-for(i in 2:2) {
+for(i in 2:25) {
   site.info(i)
   PictureDirectory = image.folders[i]
   setwd(PictureDirectory)
@@ -48,7 +48,7 @@ for(i in 2:2) {
 
 
   # loop through images and process them
-  loop.through.images(plot.im = F, verbose = F, first.pic =1 , last.pics = 2,
+  loop.through.images(plot.im = F, verbose = F, first.pic =1 , last.pics = last.pics,
                     pictures.list = pictures.list, blur = 3)
 
 
