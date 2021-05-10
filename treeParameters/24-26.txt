@@ -1,0 +1,20 @@
+
+  tree.locations <<- data.frame(
+    crop.x.1 = c(0.080, 0.220 , 0.88), 
+    crop.y.1 = c(0.300, 0.300  , 0.300),
+    crop.x.2 = c(0.100, 0.23 , 0.90),
+    crop.y.2 = c(0.950, 0.950 , 0.950)
+  )
+  
+  fg.bg.locations <<- data.frame(
+    fg.x.1 = c(0.01, 0.01, 0.01),   # topleft of foreground
+    fg.y.1 = c(0.02, 0.02, 0.01),
+    fg.x.2 = c(0.9, 0.9, 0.9), # bottomright of foreground
+    fg.y.2 = c(0.2, 0.2, 0.2),  
+    
+    bg.x.1 = c(0.1, 0.1, 0.1), # topleft of background
+    bg.y.1 = c(0.9, 0.8, 0.8),  
+    bg.x.2 = c(0.9, 0.9, 0.9),
+    bg.y.2 = c(0.98, 0.98, 0.98)  # bottomright of background
+  )
+  
