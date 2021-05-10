@@ -5,7 +5,7 @@ rm(list = ls(all.names = TRUE))
 master.folder <- "~/OneDrive - Kennesaw State University/Students/Brandon Crasto"
 PictureDirectory <- "~/OneDrive - Kennesaw State University/Research/Chimney/Data/BB-UF/CamPhotos"
 
-master.folder <- "C:/Users/branc/Desktop/New folder (3)"
+master.folder <- "C:/Users/branc/Desktop/New folder (4)/SnowDepthProject"
 PictureDirectory <- "C:/Users/branc/Desktop/New folder (3)/snow"
 
 #Set Directories
@@ -32,7 +32,7 @@ test <- data.frame()
 
 
 i=2
-for(i in 2:25) {
+for(i in 2:2) {
   site.info(i)
   PictureDirectory = image.folders[i]
   setwd(PictureDirectory)
@@ -48,7 +48,7 @@ for(i in 2:25) {
 
 
   # loop through images and process them
-  loop.through.images(plot.im = F, verbose = F, first.pic =1 , last.pics = last.pics,
+  loop.through.images(plot.im = F, verbose = F, first.pic =1 , last.pics = 2,
                     pictures.list = pictures.list, blur = 3)
 
 
