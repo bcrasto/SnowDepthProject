@@ -56,7 +56,13 @@ loop.through.images <- function(verbose, plot.im, first.pic, last.pics, pictures
       
       #img <- jpeg::readJPEG(paste0(list.files(PictureDirectory, pattern = ".JPG")[j]))
       imag <- paste0(metaData$PictureDirectory[j],"/", metaData$SourceFile[j])
-    
+      
+      imag <- image_read(imag)
+      imag <- image_crop(imag, "3648x2736+0+1500")
+      imagePath <- paste0("C:/Users/branc/Desktop/New folder (3)/Temp/Temp.JPG")
+      image_write(imag, path = imagePath, format = "JPG")
+      imag <- imagePath
+      
       
       if (verbose == T) {cat("Currently on image number",j, "\n")}
       

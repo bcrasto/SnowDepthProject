@@ -4,7 +4,7 @@
 master.folder <- "~/OneDrive - Kennesaw State University/Students/Brandon Crasto"
 PictureDirectory <- "~/OneDrive - Kennesaw State University/Research/Chimney/Data/BB-UF/CamPhotos"
 
-master.folder <- "C:/Users/branc/Desktop/New folder (3)"
+master.folder <- "C:/Users/branc/Desktop/New folder (4)/SnowDepthProject"
 PictureDirectory <- "C:/Users/branc/Desktop/New folder (3)/snow"
 
 #Set Directories

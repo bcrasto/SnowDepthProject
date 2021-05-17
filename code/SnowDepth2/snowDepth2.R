@@ -5,12 +5,12 @@ rm(list = ls(all.names = TRUE))
 master.folder <- "~/OneDrive - Kennesaw State University/Students/Brandon Crasto"
 PictureDirectory <- "~/OneDrive - Kennesaw State University/Research/Chimney/Data/BB-UF/CamPhotos"
 
-master.folder <- "C:/Users/branc/Desktop/New folder (3)"
+master.folder <- "C:/Users/branc/Desktop/New folder (4)/SnowDepthProject"
 PictureDirectory <- "C:/Users/branc/Desktop/New folder (3)/snow"
 
 #Set Directories
 working.dir          <- paste0(master.folder,"/code/SnowDepth2")      # location of R code files
-DataDirectory        <- paste0(master.folder,"/Data/snowDepth2/v10")      # location of output
+DataDirectory        <- paste0(master.folder,"/Data/snowDepth2/v11")      # location of output
 CalibrationDirectory <- paste0(master.folder,"/Calibration")   # location of calibration images
 setwd(working.dir)
 
@@ -31,7 +31,7 @@ get.Metadata() # want this to be by-folder
 
 
 #Go through each image and get R G B means and percentage
-loop.through.images(plot.im = T, 
+loop.through.images(plot.im = F, 
                     verbose = F, 
                     first.pic = 490 , 
                     last.pics = number.pics,
@@ -43,12 +43,36 @@ bla <- time.filter(metaData,
             max_hours = 24)
 
 # generate output
-#write.csv(metaData,paste0(DataDirectory,"/MetaData.csv"))
-#write.csv(bla,paste0(DataDirectory,"/MetaData_filtered.csv"))
+write.csv(metaData,paste0(DataDirectory,"/MetaData.csv"))
+write.csv(bla,paste0(DataDirectory,"/MetaData_filtered.csv"))
 
 
 
 metaData <- read.csv(paste0(DataDirectory,"/","MetaData.csv"))
 bla <- read.csv(paste0(DataDirectory,"/","MetaData_filtered.csv"))
+
+#######################################################
+
+install.packages("magick")
+library(magick)
+
+imagePath = "C:/Users/branc/Desktop/New folder (3)/Temp/IMAG0016.JPG"
+frink <- image_read(imagePath)
+frink <- image_crop(frink, "3648x2736+0+1500")
+
+image_write(frink, path = imagePath, format = "JPG")
+
+
+
+#plot color graph
+colordistance::plotPixels(imagePath, lower = NULL, upper = NULL, n = 5000)
+
+kmeans.clusters <- colordistance::getKMeanColors(imagePath, n = 2, plotting = T)
+
+
+
+
+
+
 
 
